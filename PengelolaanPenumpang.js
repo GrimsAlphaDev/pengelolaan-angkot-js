@@ -1,7 +1,7 @@
-let penumpang = ['Chrisna', undefined , 'Bobby'];
-let coba;
+let penumpang = [];
+let tambahPenumpang, hapusPenumpang;
 
-coba = function (namaP, penumpang) {
+tambahPenumpang = function (namaP, penumpang) {
 
     // Jika Angkot Kosong 
     if (penumpang.length == 0) {
@@ -37,4 +37,27 @@ coba = function (namaP, penumpang) {
             }
         }
     }
+}
+
+hapusPenumpang = function (namaP, penumpang) {
+
+    // Jika Angkot Kosong
+    if (penumpang.length == 0) {
+        console.log("Angkot Masih Kosong");
+    }
+
+    for (let i = 0; i < penumpang.length; i++) {
+        // jika ada penumpang yang namanya sesuai hapus dengan memberi nilai undifined
+        if (penumpang[i] == namaP) {
+            penumpang[i] = undefined;
+            return penumpang;
+        } else if(i == penumpang.length - 1) {
+            // Jika tidak ada penumpang yang namanya sesuai
+            console.log(namaP + " tidak ada dalam angkot");
+            return penumpang;
+        }
+
+    }
+    
+    return penumpang;
 }
